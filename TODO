@@ -1,4 +1,4 @@
-- The OO design is a real MESS. Most of it is easy to fix without braking the
+- The OO design is a real MESS. Most of it is easy to fix without breaking the
   API
 - coldef_strategy is an ugly hack. This API should be redone for a 2.0 release.  
 - nicer examples.pdf (started)

@@ -51,11 +51,11 @@ L<LaTeX::Table>, L<LaTeX::Table::Themes::ThemeI>
 
 =head1 AUTHOR
 
-Markus Riester  C<< <mriester@gmx.de> >>
+M. Riester  C<< <mriester@gmx.de> >>
 
 =head1 LICENSE AND COPYRIGHT
 
-Copyright (c) 2006-2010, Markus Riester C<< <mriester@gmx.de> >>. 
+Copyright (c) 2006-2010, M. Riester C<< <mriester@gmx.de> >>. 
 
 This module is free software; you can redistribute it and/or
 modify it under the same terms as Perl itself. See L<perlartistic>.
