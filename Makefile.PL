@@ -27,6 +27,15 @@ WriteMakefile(
         'Text::CSV'      => 0,
         'Cwd'            => 0,
     },
+    (   ( ExtUtils::MakeMaker->VERSION() gt '6.46' )
+        ? ( META_MERGE => {
+                resources => {
+                    repository => 'http://github.com/lima1/p5-latex-table',
+                },
+            }
+            )
+        : ()
+    ),
     EXE_FILES         => [ 'bin/csv2pdf', 'bin/ltpretty' ], 
     dist                => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
     clean               => { FILES => 'LaTeX-Table-*' },

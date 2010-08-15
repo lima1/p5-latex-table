@@ -1,5 +1,7 @@
 Revision history for LaTeX-Table
-
+        
+        - added github in Makefile.PL and Build.PL
+        
 1.0.2  Wed  Jul 21 21:08:00 2010
         - Support for recent Class:MOP (patch from Ansgar, Thanks!!)
         

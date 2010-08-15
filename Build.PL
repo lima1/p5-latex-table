@@ -34,6 +34,11 @@ my $builder = Module::Build->new(
         'autodie'        => 0,
     },    
     script_files        => [ 'bin/csv2pdf', 'bin/ltpretty' ], 
+    meta_merge => {
+        resources => {
+            repository => 'http://github.com/lima1/p5-latex-table',
+        },
+    },
     add_to_cleanup      => [ 'LaTeX-Table-*' ],
 );
 
