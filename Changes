@@ -1,5 +1,8 @@
 Revision history for LaTeX-Table
         
+1.0.4  Wed  Aug 24 2010
+        - fixed stupid bug in Build.PL
+
 1.0.3  Wed  Aug 24 2010
         - small code cleanup
         - added github in Makefile.PL and Build.PL

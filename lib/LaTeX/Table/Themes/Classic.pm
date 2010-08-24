@@ -3,7 +3,7 @@ use Moose;
 
 with 'LaTeX::Table::Themes::ThemeI';
 
-use version; our $VERSION = qv('1.0.3');
+use version; our $VERSION = qv('1.0.4');
 
 sub _definition {
     my $themes = {
