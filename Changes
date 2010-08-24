@@ -1,9 +1,10 @@
 Revision history for LaTeX-Table
         
-1.0.3  Wed  Jul 21 2010
+1.0.3  Wed  Aug 24 2010
         - small code cleanup
         - added github in Makefile.PL and Build.PL
         - moved author tests to xt
+        - longtable tests
         
 1.0.2  Wed  Jul 21 2010
         - Support for recent Class:MOP (patch from Ansgar, Thanks!!)

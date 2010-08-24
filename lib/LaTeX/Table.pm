@@ -680,7 +680,7 @@ This document describes LaTeX::Table version 1.0.3
         maincaption => 'Price List',
         caption     => 'Try our special offer today!',
         label       => 'table:prices',
-        position    => 'htb',
+        position    => 'tbp',
         header      => $header,
         data        => $data,
   	}
@@ -999,9 +999,9 @@ Default is 0. Requires C<environment>.
 
 =item C<position>
 
-The position of the environment, e.g. 'htb'. Only generated if get_position()
+The position of the environment, e.g. 'tbp'. Only generated if get_position()
 returns a true value. Default 0. Requires C<environment> and tables of C<type>
-I<std>.
+I<std> or I<ctable>.
 
 =item C<sideways>
 

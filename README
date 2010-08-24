@@ -1,4 +1,4 @@
-LaTeX-Table version 1.0.2
+LaTeX-Table version 1.0.3
 
 This module supports multipage tables via the xtab and the longtable package.
 For publication quality tables it utilizes the booktabs package. It also
@@ -45,10 +45,7 @@ distibution.
 This script generates some LaTeX files with some example tables.
 Now please compile these examples with LaTeX and check if all tables look ok:
 
-    latex examples.tex 
-    xdvi examples.dvi 
-    dvipdf examples.dvi
-    
+    pdflatex examples.tex 
 
 PROGRAMS
 
@@ -69,6 +66,7 @@ DEPENDENCIES
 Carp
 Module::Pluggable
 Moose
+MooseX::FollowPBP
 English
 Scalar::Util
 Template
