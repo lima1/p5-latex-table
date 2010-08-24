@@ -34,7 +34,7 @@ has '+_template'            => ( default => $template );
 # default width environment is tabularx
 after '_check_options' => sub {
     my ($self) = @_;
-    if ($self->_table_obj->get_width || $self->_table_obj->get_maxwidth) {
+    if ( $self->_table_obj->get_width || $self->_table_obj->get_maxwidth ) {
         $self->_table_obj->set_width_environment('tabularx');
     }
 };

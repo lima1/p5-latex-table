@@ -565,7 +565,7 @@ sub _add_font_color {
 
 sub _get_coldef_type_col_suffix {
     my ($self) = @_;
-    if (   $self->get_width_environment eq 'tabularx') {
+    if ( $self->get_width_environment eq 'tabularx' ) {
         return '_COL_X';
     }
     elsif ( $self->get_width_environment eq 'tabulary' ) {
