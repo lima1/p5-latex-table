@@ -39,12 +39,23 @@ has '+_is_floating'         => ( default => 0 );
 # longtable only supports tabularx with LTXtable package, we don't need the
 # width here. Set to an arbitrary true value, we don't output it in the
 # template anyway.
-after '_check_options' => sub {
+before '_check_options' => sub {
     my ($self) = @_;
-    if ($self->_table_obj->get_width_environment eq 'tabularx' && !$self->_table_obj->get_width) {
+    if ( $self->_table_obj->get_width_environment eq 'tabularx'
+        && !$self->_table_obj->get_width )
+    {
         $self->_table_obj->set_width(1);
     }
 };
+
+sub _get_tabular_environment {
+    my ($self) = @_;
+    my $tbl = $self->_table_obj;
+
+    return $tbl->get_custom_tabular_environment
+        ? $tbl->get_custom_tabular_environment
+        : $self->_tabular_environment;
+}
 
 1;
 __END__

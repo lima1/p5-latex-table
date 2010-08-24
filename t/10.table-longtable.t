@@ -1,4 +1,4 @@
-use Test::More tests => 2;
+use Test::More tests => 3;
 use Test::NoWarnings;
 
 use LaTeX::Table;
@@ -56,5 +56,64 @@ EOT
 ;
 
 my $output = $table->generate_string();
-is_deeply([ split("\n",$output) ], [split("\n",$expected_output)], 'without
-    table environment') || diag $output;
+is_deeply([ split("\n",$output) ], [split("\n",$expected_output)], 
+    'without table environment') || diag $output;
+
+my $header = [ [ 'Character', 'Fullname', 'Voice' ], ];
+my $data = [
+    [ 'Homer', 'Homer Jay Simpson',               'Dan Castellaneta', ],
+    [],
+    [ 'Marge', 'Marjorie Simpson (nee Bouvier)', 'Julie Kavner', ],
+    [ 'Bart',  'Bartholomew Jojo Simpson',        'Nancy Cartwright', ],
+    [ 'Lisa',  'Elizabeth Marie Simpson',         'Yeardley Smith', ],
+    [   'Maggie',
+        'Margaret Simpson',
+        'Elizabeth Taylor, Nancy Cartwright, James Earl Jones,'
+            . 'Yeardley Smith, Harry Shearer',
+    ],
+];
+
+#no header test
+$table = LaTeX::Table->new(
+    {   data              => $data,
+        header            => $header,
+        width_environment => 'tabularx',
+        type              => 'longtable',
+    }
+);
+
+$output = $table->generate_string();
+
+$expected_output =<<'EOT'
+{
+\begin{longtable}[c]{lXX}
+\toprule
+Character & Fullname & Voice \\
+\midrule
+\endfirsthead
+
+\toprule
+Character & Fullname & Voice \\
+\midrule
+\endhead
+\midrule
+\multicolumn{3}{r}{{Continued on next page}} \\
+\bottomrule
+\endfoot
+
+\endlastfoot
+Homer  & Homer Jay Simpson              & Dan Castellaneta                                                                   \\
+\midrule
+Marge  & Marjorie Simpson (nee Bouvier) & Julie Kavner                                                                       \\
+Bart   & Bartholomew Jojo Simpson       & Nancy Cartwright                                                                   \\
+Lisa   & Elizabeth Marie Simpson        & Yeardley Smith                                                                     \\
+Maggie & Margaret Simpson               & Elizabeth Taylor, Nancy Cartwright, James Earl Jones,Yeardley Smith, Harry Shearer \\
+\bottomrule
+\end{longtable}
+}
+EOT
+;
+
+is_deeply([ split("\n",$output) ], [split("\n",$expected_output)], 
+    'tabularx and longtable') || diag $output;
+

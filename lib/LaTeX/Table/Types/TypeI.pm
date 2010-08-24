@@ -154,7 +154,7 @@ sub _check_options {
         $tbl->set_width_environment(0);
     }
     if ( !$tbl->get_width ) {
-        if (   $tbl->get_width_environment eq 'tabularx' ) {
+        if ( $tbl->get_width_environment eq 'tabularx' ) {
             $tbl->_invalid_option_usage( 'width_environment',
                 'Is tabularx and width is unset' );
         }
@@ -231,7 +231,7 @@ sub _get_tabular_environment {
         }
         else {
             $res = $tbl->get_width_environment;
-        }     
+        }
     }
     return $res;
 }
