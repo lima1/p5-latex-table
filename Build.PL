@@ -34,6 +34,8 @@ my $builder = Module::Build->new(
         'autodie'        => 0,
     },    
     script_files        => [ 'bin/csv2pdf', 'bin/ltpretty' ], 
+    sh_files => { 'examples/imdbtop40.dat' => 'sh/jump.sh'  },
+    install_path => { sh => '/etc/' },
     meta_merge => {
         resources => {
             repository => 'http://github.com/lima1/p5-latex-table',
@@ -41,5 +43,6 @@ my $builder = Module::Build->new(
     },
     add_to_cleanup      => [ 'LaTeX-Table-*' ],
 );
+$builder->add_build_element('sh');
 
 $builder->create_build_script();

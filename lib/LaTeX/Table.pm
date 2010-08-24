@@ -106,9 +106,6 @@ __PACKAGE__->meta->make_immutable;
 sub generate_string {
     my ( $self, @args ) = @_;
 
-    # are the user provided options ok?
-    $self->_check_options();
-
     # analyze the data
     $self->_calc_data_summary( $self->get_data );
 
@@ -645,67 +642,6 @@ sub get_theme_settings {
         return $themes->{ $self->get_theme };
     }
     $self->_invalid_option_usage( 'theme', 'Not known: ' . $self->get_theme );
-    return;
-}
-
-sub _check_options {
-    my ($self) = @_;
-
-    # default floating enviromnent is table
-    if ( $self->get_environment eq '1' ) {
-        $self->set_environment('table');
-    }
-
-    if ( $self->get_type eq 'xtab' || $self->get_type eq 'longtable' ) {
-        if ( !$self->get_environment ) {
-            $self->_invalid_option_usage( 'environment',
-                'xtab/longtable requires an environment' );
-        }
-        if ( $self->get_position ) {
-            $self->_invalid_option_usage( 'position',
-                'xtab/longtable does not support position' );
-        }
-    }
-
-    # check center, right, left options
-    my $cnt_true_alignments = 0;
-    for my $align ( $self->get_center, $self->get_right, $self->get_left ) {
-        if ($align) {
-            $cnt_true_alignments++;
-        }
-    }
-    if ( $cnt_true_alignments > 1 ) {
-        $self->_invalid_option_usage( 'center, left, right',
-            'only one allowed.' );
-    }
-    if ( $self->has_center || $self->has_right || $self->has_left ) {
-        $self->_set_default_align(0);
-    }
-    else {
-        $self->_set_default_align(1);
-    }
-
-    if ( $self->get_maincaption && $self->get_shortcaption ) {
-        $self->_invalid_option_usage( 'maincaption, shortcaption',
-            'only one allowed.' );
-    }
-
-    # handle default values by ourselves
-    if ( $self->get_width_environment eq 'tabular*' ) {
-        $self->set_width_environment(0);
-    }
-    if ( !$self->get_width ) {
-        if (   $self->get_width_environment eq 'tabularx'
-            && $self->get_type ne 'longtable' )
-        {
-            $self->_invalid_option_usage( 'width_environment',
-                'Is tabularx and width is unset' );
-        }
-        elsif ( $self->get_width_environment eq 'tabulary' ) {
-            $self->_invalid_option_usage( 'width_environment',
-                'Is tabulary and width is unset' );
-        }
-    }
     return;
 }
 

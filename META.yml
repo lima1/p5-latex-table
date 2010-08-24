@@ -1,36 +1,19 @@
 ---
-name: LaTeX-Table
-version: v1.0.2
+abstract: 'Perl extension for the automatic generation of LaTeX tables.'
 author:
   - 'Markus Riester <limaone@cpan.org>'
-abstract: Perl extension for the automatic generation of LaTeX tables.
-license: perl
-resources:
-  license: http://dev.perl.org/licenses/
 build_requires:
   File::Spec: 0
   Test::More: 0
   Test::NoWarnings: 0
-requires:
-  Carp: 0
-  Cwd: 0
-  English: 0
-  Module::Pluggable: 0
-  Moose: 0.76
-  MooseX::FollowPBP: 0
-  Scalar::Util: 0
-  Template: 0
-  perl: v5.8.0
-  version: 0
-recommends:
-  Getopt::Long: 0
-  LaTeX::Driver: 0
-  LaTeX::Encode: 0
-  Number::Format: 0
-  Text::CSV: 0
-  autodie: 0
 configure_requires:
-  Module::Build: 0.35
+  Module::Build: 0.36
+generated_by: 'Module::Build version 0.3607'
+license: perl
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: LaTeX-Table
 provides:
   LaTeX::Table:
     file: lib/LaTeX/Table.pm
@@ -65,7 +48,25 @@ provides:
   LaTeX::Table::Types::Xtab:
     file: lib/LaTeX/Table/Types/Xtab.pm
     version: v1.0.2
-generated_by: Module::Build version 0.35
-meta-spec:
-  url: http://module-build.sourceforge.net/META-spec-v1.4.html
-  version: 1.4
+recommends:
+  Getopt::Long: 0
+  LaTeX::Driver: 0
+  LaTeX::Encode: 0
+  Number::Format: 0
+  Text::CSV: 0
+  autodie: 0
+requires:
+  Carp: 0
+  Cwd: 0
+  English: 0
+  Module::Pluggable: 0
+  Moose: 0.76
+  MooseX::FollowPBP: 0
+  Scalar::Util: 0
+  Template: 0
+  perl: v5.8.0
+  version: 0
+resources:
+  license: http://dev.perl.org/licenses/
+  repository: http://github.com/lima1/p5-latex-table
+version: v1.0.2

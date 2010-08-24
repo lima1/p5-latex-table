@@ -271,7 +271,7 @@ eval { $table->generate_string; };
 
 like(
     $EVAL_ERROR,
-    qr{Invalid usage of option environment: xtab/longtable requires an environment\.},
+    qr{Invalid usage of option environment: xtab is non-floating and requires an environment\.},
     'xtab requires environment'
 ) || diag $EVAL_ERROR;
 
@@ -287,8 +287,8 @@ eval { $table->generate_string; };
 
 like(
     $EVAL_ERROR,
-    qr{Invalid usage of option environment: xtab/longtable requires an environment\.},
-    'xtab requires environment'
+    qr{Invalid usage of option environment: longtable is non-floating and requires an environment\.},
+    'longtable requires environment'
 ) || diag $EVAL_ERROR;
 $table = LaTeX::Table->new(
     {   header   => $header,
@@ -302,7 +302,7 @@ eval { $table->generate_string; };
 
 like(
     $EVAL_ERROR,
-    qr{Invalid usage of option position: xtab/longtable does not support position\.},
+    qr{Invalid usage of option position: xtab is non-floating and thus does not support position\.},
     'xtab/longtable does not support position'
 ) || diag $EVAL_ERROR;
 

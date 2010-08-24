@@ -35,8 +35,8 @@ t/60.coldef.t
 t/70.callback.t
 t/80.themes.t
 t/lib/MyThemes/Custom.pm
-t/perlcritic.t
-t/perlcriticrc
-t/perltidyrc
-t/pod-coverage.t
-t/pod.t
+xt/release/perlcritic.t
+xt/release/perlcriticrc
+xt/release/perltidyrc
+xt/release/pod-coverage.t
+xt/release/pod.t

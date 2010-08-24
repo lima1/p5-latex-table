@@ -34,6 +34,7 @@ EOT
 
 has '+_tabular_environment' => ( default => 'longtable' );
 has '+_template'            => ( default => $template );
+has '+_is_floating'         => ( default => 0 );
 
 1;
 __END__
