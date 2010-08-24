@@ -6,7 +6,7 @@ use warnings;
 use LaTeX::Table;
 use Carp;
 
-use version; our $VERSION = qv('1.0.3');
+use version; our $VERSION = qv('1.0.4');
 
 my $line_id = 0;
 my @input;

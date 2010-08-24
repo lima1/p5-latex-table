@@ -17,37 +17,37 @@ name: LaTeX-Table
 provides:
   LaTeX::Table:
     file: lib/LaTeX/Table.pm
-    version: v1.0.3
+    version: v1.0.4
   LaTeX::Table::Themes::Beamer:
     file: lib/LaTeX/Table/Themes/Beamer.pm
-    version: v1.0.3
+    version: v1.0.4
   LaTeX::Table::Themes::Booktabs:
     file: lib/LaTeX/Table/Themes/Booktabs.pm
-    version: v1.0.3
+    version: v1.0.4
   LaTeX::Table::Themes::Classic:
     file: lib/LaTeX/Table/Themes/Classic.pm
-    version: v1.0.3
+    version: v1.0.4
   LaTeX::Table::Themes::Modern:
     file: lib/LaTeX/Table/Themes/Modern.pm
-    version: v1.0.3
+    version: v1.0.4
   LaTeX::Table::Themes::ThemeI:
     file: lib/LaTeX/Table/Themes/ThemeI.pm
-    version: v1.0.3
+    version: v1.0.4
   LaTeX::Table::Types::Ctable:
     file: lib/LaTeX/Table/Types/Ctable.pm
-    version: v1.0.3
+    version: v1.0.4
   LaTeX::Table::Types::Longtable:
     file: lib/LaTeX/Table/Types/Longtable.pm
-    version: v1.0.3
+    version: v1.0.4
   LaTeX::Table::Types::Std:
     file: lib/LaTeX/Table/Types/Std.pm
-    version: v1.0.3
+    version: v1.0.4
   LaTeX::Table::Types::TypeI:
     file: lib/LaTeX/Table/Types/TypeI.pm
-    version: v1.0.3
+    version: v1.0.4
   LaTeX::Table::Types::Xtab:
     file: lib/LaTeX/Table/Types/Xtab.pm
-    version: v1.0.3
+    version: v1.0.4
 recommends:
   Getopt::Long: 0
   LaTeX::Driver: 0
@@ -69,4 +69,4 @@ requires:
 resources:
   license: http://dev.perl.org/licenses/
   repository: http://github.com/lima1/p5-latex-table
-version: v1.0.3
+version: v1.0.4
