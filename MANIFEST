@@ -25,6 +25,7 @@ lib/LaTeX/Table/Themes/Modern.pm
 t/00.load.t
 t/10.table-ctable.t
 t/10.table-custom.t
+t/10.table-longtable.t
 t/10.table-std.t
 t/10.table-xtab.t
 t/20.mcdef.t

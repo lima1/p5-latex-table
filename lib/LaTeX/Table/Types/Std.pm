@@ -3,7 +3,7 @@ use Moose;
 
 with 'LaTeX::Table::Types::TypeI';
 
-use version; our $VERSION = qv('1.0.2');
+use version; our $VERSION = qv('1.0.3');
 
 my $template = <<'EOT'
 [%IF CONTINUED %]\addtocounter{table}{-1}[% END %][% DEFINE_COLORS_CODE %][% IF ENVIRONMENT %]\begin{[% IF SIDEWAYS %]sidewaystable[% ELSE %][% ENVIRONMENT %][% END %][% IF STAR %]*[% END %]}[% IF POSITION %][[% POSITION %]][% END %]
@@ -45,13 +45,9 @@ LaTeX::Table::Types::Std - Create standard LaTeX tables.
 
 L<LaTeX::Table>, L<LaTeX::Table::Types::TypeI>
 
-=head1 AUTHOR
-
-M. Riester  C<< <limaone@cpan.org> >>
-
 =head1 LICENSE AND COPYRIGHT
 
-Copyright (c) 2006-2010, M. Riester C<< <limaone@cpan.org> >>. 
+Copyright (c) 2006-2010, C<< <limaone@cpan.org> >>. 
 
 This module is free software; you can redistribute it and/or
 modify it under the same terms as Perl itself. See L<perlartistic>.

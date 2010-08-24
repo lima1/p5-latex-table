@@ -6,18 +6,18 @@ use warnings;
 use Moose::Role;
 use Template;
 
-use version; our $VERSION = qv('1.0.2');
+use version; our $VERSION = qv('1.0.3');
 
 use Carp;
 
 has '_table_obj' => ( is => 'rw', isa => 'LaTeX::Table', required => 1 );
-has '_tabular_environment'  => ( is => 'ro', required => 1 );
-has '_template'             => ( is => 'ro', required => 1 );
-has '_is_floating'          => ( is => 'ro', default  => 1, required => 1 );
+has '_tabular_environment' => ( is => 'ro', required => 1 );
+has '_template'            => ( is => 'ro', required => 1 );
+has '_is_floating'         => ( is => 'ro', default  => 1, required => 1 );
 
 sub generate_latex_code {
     my ($self) = @_;
-    
+
     $self->_check_options();
 
     my $tbl   = $self->_table_obj;
@@ -115,12 +115,14 @@ sub _check_options {
 
     if ( !$self->_is_floating ) {
         if ( !$tbl->get_environment ) {
-            $tbl->_invalid_option_usage( 'environment', $tbl->get_type .
-                ' is non-floating and requires an environment' );
+            $tbl->_invalid_option_usage( 'environment',
+                $tbl->get_type
+                    . ' is non-floating and requires an environment' );
         }
         if ( $tbl->get_position ) {
-            $tbl->_invalid_option_usage( 'position', $tbl->get_type .
-                ' is non-floating and thus does not support position' );
+            $tbl->_invalid_option_usage( 'position',
+                $tbl->get_type
+                    . ' is non-floating and thus does not support position' );
         }
     }
 
@@ -152,9 +154,7 @@ sub _check_options {
         $tbl->set_width_environment(0);
     }
     if ( !$tbl->get_width ) {
-        if (   $tbl->get_width_environment eq 'tabularx'
-            && $tbl->get_type ne 'longtable' )
-        {
+        if (   $tbl->get_width_environment eq 'tabularx' ) {
             $tbl->_invalid_option_usage( 'width_environment',
                 'Is tabularx and width is unset' );
         }
@@ -229,9 +229,9 @@ sub _get_tabular_environment {
         if ( !$tbl->get_width_environment ) {
             $res .= q{*};
         }
-        elsif ( $tbl->get_type ne 'longtable' ) {  #want the ltxtable package?
+        else {
             $res = $tbl->get_width_environment;
-        }
+        }     
     }
     return $res;
 }
@@ -400,13 +400,9 @@ The predefined templates: L<LaTeX::Table::Types::Std>,
 L<LaTeX::Table::Types::Ctable>, L<LaTeX::Table::Types::Longtable>,
 L<LaTeX::Table::Types::Xtab>
 
-=head1 AUTHOR
-
-M. Riester  C<< <limaone@cpan.org> >>
-
 =head1 LICENSE AND COPYRIGHT
 
-Copyright (c) 2006-2010, M. Riester C<< <limaone@cpan.org> >>. 
+Copyright (c) 2006-2010, C<< <limaone@cpan.org> >>. 
 
 This module is free software; you can redistribute it and/or
 modify it under the same terms as Perl itself. See L<perlartistic>.

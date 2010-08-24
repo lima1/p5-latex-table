@@ -7,7 +7,7 @@ use Moose;
 use Moose::Util::TypeConstraints;
 use MooseX::FollowPBP;
 
-use version; our $VERSION = qv('1.0.2');
+use version; our $VERSION = qv('1.0.3');
 
 use LaTeX::Table::Types::Std;
 use LaTeX::Table::Types::Xtab;
@@ -565,12 +565,10 @@ sub _add_font_color {
 
 sub _get_coldef_type_col_suffix {
     my ($self) = @_;
-    if (   $self->get_width_environment eq 'tabularx'
-        || $self->get_type eq 'ctable' )
-    {
+    if (   $self->get_width_environment eq 'tabularx') {
         return '_COL_X';
     }
-    if ( $self->get_width_environment eq 'tabulary' ) {
+    elsif ( $self->get_width_environment eq 'tabulary' ) {
         return '_COL_Y';
     }
     return '_COL';
@@ -625,8 +623,7 @@ sub _get_coldef_code {
         $i++;
         if (   $i == 1
             && $self->get_width
-            && !$self->get_width_environment
-            && $self->get_type ne 'ctable' )
+            && !$self->get_width_environment )
         {
             $table_def .= '@{\extracolsep{\fill}}';
         }
@@ -656,7 +653,7 @@ LaTeX::Table - Perl extension for the automatic generation of LaTeX tables.
 
 =head1 VERSION
 
-This document describes LaTeX::Table version 1.0.2
+This document describes LaTeX::Table version 1.0.3
 
 =head1 SYNOPSIS
 
@@ -1434,13 +1431,9 @@ Packages and Methods>.
 
 =back
 
-=head1 AUTHOR
-
-M. Riester  C<< <limaone@cpan.org> >>
-
 =head1 LICENSE AND COPYRIGHT
 
-Copyright (c) 2006-2010, M. Riester C<< <limaone@cpan.org> >>. 
+Copyright (c) 2006-2010, C<< <limaone@cpan.org> >>. 
 
 This module is free software; you can redistribute it and/or
 modify it under the same terms as Perl itself. See L<perlartistic>.

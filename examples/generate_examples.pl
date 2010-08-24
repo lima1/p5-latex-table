@@ -1151,7 +1151,6 @@ __DATA__
 %\usepackage[tableposition=top]{caption}
 \title{LaTeX::Table}
 \date{\today}
-\author{Markus Riester}
  \makeindex
 \begin{document}
 \bibliographystyle{alpha}

@@ -6,7 +6,7 @@ use ExtUtils::MakeMaker;
 
 WriteMakefile(
     NAME                => 'LaTeX::Table',
-    AUTHOR              => 'Markus Riester <limaone@cpan.org>',
+    AUTHOR              => '<limaone@cpan.org>',
     VERSION_FROM        => 'lib/LaTeX/Table.pm',
     ABSTRACT_FROM       => 'lib/LaTeX/Table.pm',
     ((ExtUtils::MakeMaker->VERSION() gt '6.30') ?

@@ -3,7 +3,7 @@ use Moose;
 
 with 'LaTeX::Table::Types::TypeI';
 
-use version; our $VERSION = qv('1.0.2');
+use version; our $VERSION = qv('1.0.3');
 
 my $template = <<'EOT'
 {
@@ -36,6 +36,16 @@ has '+_tabular_environment' => ( default => 'longtable' );
 has '+_template'            => ( default => $template );
 has '+_is_floating'         => ( default => 0 );
 
+# longtable only supports tabularx with LTXtable package, we don't need the
+# width here. Set to an arbitrary true value, we don't output it in the
+# template anyway.
+after '_check_options' => sub {
+    my ($self) = @_;
+    if ($self->_table_obj->get_width_environment eq 'tabularx' && !$self->_table_obj->get_width) {
+        $self->_table_obj->set_width(1);
+    }
+};
+
 1;
 __END__
 
@@ -55,13 +65,9 @@ LaTeX::Table::Types::Longtable - Create multi-page LaTeX tables with the longtab
 
 L<LaTeX::Table>, L<LaTeX::Table::Types::TypeI>
 
-=head1 AUTHOR
-
-M. Riester  C<< <limaone@cpan.org> >>
-
 =head1 LICENSE AND COPYRIGHT
 
-Copyright (c) 2006-2010, M. Riester C<< <limaone@cpan.org> >>. 
+Copyright (c) 2006-2010, C<< <limaone@cpan.org> >>. 
 
 This module is free software; you can redistribute it and/or
 modify it under the same terms as Perl itself. See L<perlartistic>.

@@ -5,7 +5,7 @@ use warnings;
 
 use Moose::Role;
 
-use version; our $VERSION = qv('1.0.2');
+use version; our $VERSION = qv('1.0.3');
 
 requires '_definition';
 
@@ -213,13 +213,9 @@ looks nice, please contribute it.
 
 L<LaTeX::Table>
 
-=head1 AUTHOR
-
-M. Riester  C<< <limaone@cpan.org> >>
-
 =head1 LICENSE AND COPYRIGHT
 
-Copyright (c) 2006-2010, M. Riester C<< <limaone@cpan.org> >>. 
+Copyright (c) 2006-2010, C<< <limaone@cpan.org> >>. 
 
 This module is free software; you can redistribute it and/or
 modify it under the same terms as Perl itself. See L<perlartistic>.

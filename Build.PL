@@ -6,7 +6,7 @@ use Module::Build;
 my $builder = Module::Build->new(
     module_name         => 'LaTeX::Table',
     license             => 'perl',
-    dist_author         => 'Markus Riester <limaone@cpan.org>',
+    dist_author         => '<limaone@cpan.org>',
     dist_version_from   => 'lib/LaTeX/Table.pm',
     requires => {
         'perl'           => '5.8.0', 

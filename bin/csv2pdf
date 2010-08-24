@@ -21,7 +21,7 @@ use LaTeX::Table;
 use LaTeX::Encode;
 use LaTeX::Driver;
 
-use version; our $VERSION = qv('1.0.1');
+use version; our $VERSION = qv('1.0.3');
 
 my ( $infile, $outfile, $outfiletex, $help, $man, $version );
 
@@ -260,13 +260,9 @@ Please report any bugs or feature requests to
 C<bug-latex-table@rt.cpan.org>, or through the web interface at
 L<http://rt.cpan.org>. 
 
-=head1 AUTHOR
-
-Markus Riester  C<< <limaone@cpan.org> >>
-
 =head1 LICENSE AND COPYRIGHT
 
-Copyright (c) 2006-2010, Markus Riester C<< <limaone@cpan.org> >>. 
+Copyright (c) 2006-2010, C<< <limaone@cpan.org> >>. 
 
 This program is free software; you can redistribute it and/or
 modify it under the same terms as Perl itself. See L<perlartistic>.

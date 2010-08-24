@@ -3,7 +3,7 @@ use Moose;
 
 with 'LaTeX::Table::Types::TypeI';
 
-use version; our $VERSION = qv('1.0.2');
+use version; our $VERSION = qv('1.0.3');
 
 my $template = <<'EOT'
 {[% DEFINE_COLORS_CODE %][% IF FONTSIZE %]\[% FONTSIZE %]
@@ -31,6 +31,14 @@ EOT
 has '+_tabular_environment' => ( default => 'tabular' );
 has '+_template'            => ( default => $template );
 
+# default width environment is tabularx
+after '_check_options' => sub {
+    my ($self) = @_;
+    if ($self->_table_obj->get_width || $self->_table_obj->get_maxwidth) {
+        $self->_table_obj->set_width_environment('tabularx');
+    }
+};
+
 1;
 
 __END__
@@ -51,13 +59,9 @@ LaTeX::Table::Types::Ctable - Create LaTeX tables with the ctable package.
 
 L<LaTeX::Table>, L<LaTeX::Table::Types::TypeI>
 
-=head1 AUTHOR
-
-M. Riester  C<< <limaone@cpan.org> >>
-
 =head1 LICENSE AND COPYRIGHT
 
-Copyright (c) 2006-2010, M. Riester C<< <limaone@cpan.org> >>. 
+Copyright (c) 2006-2010, C<< <limaone@cpan.org> >>. 
 
 This module is free software; you can redistribute it and/or
 modify it under the same terms as Perl itself. See L<perlartistic>.
