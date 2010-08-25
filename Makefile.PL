@@ -18,7 +18,7 @@ WriteMakefile(
         'File::Spec'       => 0,
         'English'        => 0,
         'Moose'     => 0.76,
-        'MooseX::FollowPBP'    => 0,
+        'MooseX::FollowPBP'    => 0.03,
         'Module::Pluggable'    => 0,
         'Carp'           => 0,
         'Scalar::Util'   => 0,
