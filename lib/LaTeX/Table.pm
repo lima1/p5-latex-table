@@ -1433,7 +1433,7 @@ Packages and Methods>.
 
 =head1 LICENSE AND COPYRIGHT
 
-Copyright (c) 2006-2010, C<< <limaone@cpan.org> >>. 
+Copyright (c) 2006-2010 C<< <limaone@cpan.org> >> 
 
 This module is free software; you can redistribute it and/or
 modify it under the same terms as Perl itself. See L<perlartistic>.

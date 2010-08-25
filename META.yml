@@ -61,7 +61,7 @@ requires:
   English: 0
   Module::Pluggable: 0
   Moose: 0.76
-  MooseX::FollowPBP: 0
+  MooseX::FollowPBP: 0.03
   Scalar::Util: 0
   Template: 0
   perl: v5.8.0
