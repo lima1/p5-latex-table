@@ -1,9 +1,13 @@
 Revision history for LaTeX-Table
         
-1.0.4  Wed  Aug 24 2010
-        - fixed stupid bug in Build.PL
+1.0.5  Wed  Aug 25 2010
+        - Set min. version of MooseX::FollowPBP to 0.03 (older versions caused
+          cpan test fails)
 
-1.0.3  Wed  Aug 24 2010
+1.0.4  Tue  Aug 24 2010
+        - fixed stupid bug in Build.PL (introduced in 1.0.3)
+
+1.0.3  Tue  Aug 24 2010
         - small code cleanup
         - added github in Makefile.PL and Build.PL
         - moved author tests to xt

@@ -6,7 +6,7 @@ use warnings;
 use Moose::Role;
 use Template;
 
-use version; our $VERSION = qv('1.0.4');
+use version; our $VERSION = qv('1.0.5');
 
 use Carp;
 

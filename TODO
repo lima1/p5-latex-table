@@ -7,4 +7,5 @@
 - fine tune default parameters
 - shortcut for multirows
 - csvpdf should support all LT options 
+- csv2pdf should maybe use my Text::CSV::R module
 - ltpretty and csv2pdf should support a config file
