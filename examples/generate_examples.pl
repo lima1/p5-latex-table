@@ -9,6 +9,8 @@ use Number::Format qw(:subs);
 use Data::Dumper;
 use Text::CSV;
 
+use utf8;
+
 system('rm *.tex');
 
 my $test_data = [
