@@ -3,8 +3,6 @@
 use strict;
 use warnings;
 
-use utf8;
-
 use autodie qw(open close);
 use English qw( -no_match_vars );
 use Getopt::Long;
