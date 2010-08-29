@@ -62,15 +62,65 @@ LaTeX::Table::Themes::Classic - Classic LaTeX table themes.
 
 This module provides following themes:
 
-  Berlin
-  Dresden
-  Houston
-  Miami
-  plain
+=over
+
+=item plain
+
+     Animal    Description    Price  
+     Gnu       stuffed        92.59  
+     Emu       stuffed        33.33  
+
+=item Miami
+
+     Animal    Description    Price  
+   ----------------------------------
+     Gnu       stuffed        92.59  
+     Emu       stuffed        33.33  
+
+
+=item Berlin
+
+   +--------+-------------+--------+
+   | Animal | Description |  Price |
+   +========+=============+========+
+   | Gnu    | stuffed     |  92.59 |
+   | Emu    | stuffed     |  33.33 |
+   +--------+-------------+--------+
+
+=item Dresden
+
+   +--------++-------------+--------+
+   | Animal || Description |  Price |
+   +========++=============+========+
+   | Gnu    || stuffed     |  92.59 |
+   | Emu    || stuffed     |  33.33 |
+   +--------++-------------+--------+
+
+=item Houston
+
+   +--------++-------------+--------+
+   | Animal || Description |  Price |
+   +========++=============+========+
+   | Gnu    || stuffed     |  92.59 |
+   +--------++-------------+--------+
+   | Emu    || stuffed     |  33.33 |
+   +--------++-------------+--------+
+
+=back
+
+Except for C<plain>, headers are printed in bold font.
 
 =head1 REQUIRES
 
 The themes defined in this module require no additional LaTeX packages.
+
+=head1 NOTES
+
+These are the classic themes you know from the famous books and tutorials.
+However, they have flaws. Read the C<booktabs> documentation for a discussion
+of this. 
+
+The C<plain> theme might be useful in combination with the I<ltpretty> script.
 
 =head1 SEE ALSO
 

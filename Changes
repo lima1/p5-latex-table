@@ -1,5 +1,7 @@
 Revision history for LaTeX-Table
-        
+
+        - POD: Ascii tables of classic themes.
+
 1.0.5  Wed  Aug 25 2010
         - Set min. version of MooseX::FollowPBP to 0.03 (older versions caused
           cpan test fails)
