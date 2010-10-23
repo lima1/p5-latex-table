@@ -1151,8 +1151,9 @@ This will produce following LaTeX code:
   \begin{tabular*}{0.75\textwidth}{l@{\extracolsep{\fill} ... }
 
 For tables of C<type> I<std>, it is also possible to use the C<tabularx> and
-C<tabulary> LaTeX packages (see C<width_environment> below). The tables of type I<ctable>
-automatically use the C<tabularx> package.
+C<tabulary> LaTeX packages (see C<width_environment> below). The tables of
+type I<ctable> automatically use the C<tabularx> package. See also
+C<width_environment> for how to use this feature with I<longtable>. 
 
 =item C<width_environment>
 
