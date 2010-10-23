@@ -20,7 +20,7 @@ sub _definition {
         'Muenchen' => {
             'HEADER_FONT_STYLE' => 'bf',
             'STUB_ALIGN'        => 'l',
-            'DEFINE_COLORS'     => '\definecolor{latexttbl}{RGB}{78,130,190}',
+            'DEFINE_COLORS'     => '\definecolor{latextbl}{RGB}{78,130,190}',
             'CAPTION_FONT_STYLE' => 'bf',
             'DATA_BG_COLOR_EVEN' => 'latextbl!20',
             'VERTICAL_RULES'     => [ 0, 0, 0 ],
