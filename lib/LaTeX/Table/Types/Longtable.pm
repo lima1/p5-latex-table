@@ -3,7 +3,7 @@ use Moose;
 
 with 'LaTeX::Table::Types::TypeI';
 
-use version; our $VERSION = qv('1.0.5');
+use version; our $VERSION = qv('1.0.6');
 
 my $template = <<'EOT'
 {

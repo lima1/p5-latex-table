@@ -6,7 +6,7 @@ use warnings;
 use Moose::Role;
 use Template;
 
-use version; our $VERSION = qv('1.0.5');
+use version; our $VERSION = qv('1.0.6');
 
 use Carp;
 
@@ -261,10 +261,10 @@ LaTeX::Table::Types::TypeI - Interface for LaTeX table types.
 =head1 DESCRIPTION
 
 This is the type interface (or L<Moose> role), that all type objects must use.
-L<LaTeX::Table> delegates the boring work of building the LaTeX code to type
+L<LaTeX::Table> delegates the LaTeX code generation to type
 objects. It stores all information we have in easy to use L<"TEMPLATE
-VARIABLES">. L<LaTeX::Table> ships with very flexible templates, but you can
-also use the template variables defined here to build custom templates.
+VARIABLES">. L<LaTeX::Table> ships with very flexible templates, but it is
+possible to use the template variables defined here to build custom templates.
 
 =head1 INTERFACE
 
