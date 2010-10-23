@@ -58,7 +58,7 @@ foreach my $theme ( keys %{ $table->get_available_themes } ) {
     my $test_header
         = [ [ 'Item:2c', '' ], [ 'Animal', 'Description', 'Price' ] ];
 
-    if ( $theme eq 'Zurich' || $theme eq 'Meyrin' ) {
+    if ( $theme eq 'Zurich' || $theme eq 'Meyrin' || $theme eq 'Evanston' ) {
         $test_header = [
             [ 'Item:2c', '' ],
             ['\cmidrule(r){1-2}'],
