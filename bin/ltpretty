@@ -6,7 +6,7 @@ use warnings;
 use LaTeX::Table;
 use Carp;
 
-use version; our $VERSION = qv('1.0.5');
+use version; our $VERSION = qv('1.0.6');
 
 my $line_id = 0;
 my @input;
@@ -23,7 +23,7 @@ while ( my $line = <> ) {
     if ( $line_id == 0 ) {    #first line contains the parameters
         $paramline = $line;
     }
-    else {
+    elsif ( length $line > 0 ) {
         push @input, $line;
     }
     $line_id++;
