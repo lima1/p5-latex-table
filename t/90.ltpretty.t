@@ -11,6 +11,7 @@ my $expected_output =<< 'EOT'
  % Item:2c & Price
  % Gnat& per gram& 13.65
  % & each& 0.01
+ % 
  % Gnu& stuffed& 92.59
  % Emu& stuffed& 33.33
  % Armadillo& frozen& 8.99
@@ -23,6 +24,7 @@ my $expected_output =<< 'EOT'
 \midrule
 Gnat      & per gram & 13.65 \\
           & each     & 0.01  \\
+\midrule
 Gnu       & stuffed  & 92.59 \\
 Emu       & stuffed  & 33.33 \\
 Armadillo & frozen   & 8.99  \\
@@ -33,4 +35,10 @@ Armadillo & frozen   & 8.99  \\
 
 EOT
 ;
-is($expected_output, $output) or diag $output;
+
+is_deeply(
+    [ split( "\n", $output ) ],
+    [ split( "\n", $expected_output ) ],
+    'ltpretty empty lines'
+) || diag $output;
+
