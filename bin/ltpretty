@@ -23,10 +23,18 @@ while ( my $line = <> ) {
     if ( $line_id == 0 ) {    #first line contains the parameters
         $paramline = $line;
     }
-    elsif ( length $line > 0 ) {
+    else {
         push @input, $line;
     }
     $line_id++;
+}
+
+while (scalar @input) {
+    if (!length $input[-1]) {
+        pop @input;
+    } else { 
+        last;
+    }    
 }
 
 # uncomment original input
