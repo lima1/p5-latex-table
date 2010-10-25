@@ -29,12 +29,9 @@ while ( my $line = <> ) {
     $line_id++;
 }
 
-while (scalar @input) {
-    if (!length $input[-1]) {
-        pop @input;
-    } else { 
-        last;
-    }    
+# remove trailing empty lines
+while ( !length $input[-1] ) {
+    pop @input;
 }
 
 # uncomment original input
