@@ -173,16 +173,18 @@ $table = LaTeX::Table->new(
     }
 );
 
+$table->set_eor('\\\\%');
+
 $expected_output =<<'EOT'
 {
 \ctable[center,
 ]{l>{\ttfamily}l}{}{
 \toprule
-\textbf{Website} & \multicolumn{1}{c}{\textbf{URL}} \\
+\textbf{Website} & \multicolumn{1}{c}{\textbf{URL}} \\%
 \midrule
-Slashdot  & http://www.slashdot.org  \\
-Perlmonks & http://www.perlmonks.org \\
-Google    & http://www.google.com    \\
+Slashdot  & http://www.slashdot.org  \\%
+Perlmonks & http://www.perlmonks.org \\%
+Google    & http://www.google.com    \\%
 \bottomrule
 }
 }
@@ -194,6 +196,7 @@ is_deeply([ split("\n",$output) ], [split("\n",$expected_output)],
     'uses _COL_X not specified');
 
 $table->set_continued(1);
+$table->set_eor('\\\\');
 
 $expected_output =<<'EOT'
 {
