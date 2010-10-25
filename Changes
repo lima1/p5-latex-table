@@ -1,6 +1,6 @@
 Revision history for LaTeX-Table
 
-1.0.6  
+1.0.6  Mon  Oct 25 2010
         - POD: Ascii tables of classic themes.
         - fixed #62016 (thanks Bowen)
         - ltpretty ignores empty trailing lines
