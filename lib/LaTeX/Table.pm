@@ -1201,7 +1201,7 @@ Only supported by tables of type I<ctable>.
 
 =item C<eor>
 
-String specifing the end of a row. Default is '\\'.
+String specifying the end of a row. Default is '\\'.
   
   $table->set_eor("\\\\[1em]");
 
