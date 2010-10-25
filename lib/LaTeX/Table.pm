@@ -1051,15 +1051,6 @@ documentation of the C<xtab> package.
 See also the documentation of C<width> below for cases when a width is
 specified.
 
-=item C<eor>
-
-String specifing the end of a row. Default is '\\'.
-  
-  $table->set_eor("\\\\[1em]");
-
-Callback functions (see below) can be used to manually set the eor after the last
-column. This is useful when some rows require different eor strings. 
-
 =item C<coldef>
 
 The table column definition, e.g. 'lrcr' which would result in:
@@ -1207,6 +1198,15 @@ Default is 0 (see C<width>).
 =item C<maxwidth>
 
 Only supported by tables of type I<ctable>. 
+
+=item C<eor>
+
+String specifing the end of a row. Default is '\\'.
+  
+  $table->set_eor("\\\\[1em]");
+
+Callback functions (see below) can be used to manually set the eor after the last
+column. This is useful when some rows require different eor strings. 
 
 =item C<callback>
 
