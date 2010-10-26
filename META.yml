@@ -17,7 +17,7 @@ name: LaTeX-Table
 provides:
   LaTeX::Table:
     file: lib/LaTeX/Table.pm
-    version: v1.0.5_99
+    version: v1.0.6
   LaTeX::Table::Themes::Beamer:
     file: lib/LaTeX/Table/Themes/Beamer.pm
     version: v1.0.6
@@ -69,4 +69,4 @@ requires:
 resources:
   license: http://dev.perl.org/licenses/
   repository: http://github.com/lima1/p5-latex-table
-version: v1.0.5_99
+version: v1.0.6
