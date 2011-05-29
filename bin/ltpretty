@@ -8,25 +8,18 @@ use Carp;
 
 use version; our $VERSION = qv('1.0.6');
 
-my $line_id = 0;
 my @input;
-my $paramline;
 
 while ( my $line = <> ) {
     chomp $line;
-    $line =~ s{\s+}{ }xmsg;
+
+    # remove leading and trailing blanks
     $line =~ s{\A \s* | \s* \z}{}xmsg;
 
     # remove trailing \\, we do that later
     $line =~ s{\A \\\\ \z}{}xmsg;
 
-    if ( $line_id == 0 ) {    #first line contains the parameters
-        $paramline = $line;
-    }
-    else {
-        push @input, $line;
-    }
-    $line_id++;
+    push @input, $line;
 }
 
 # remove trailing empty lines
@@ -35,7 +28,9 @@ while ( !length $input[-1] ) {
 }
 
 # uncomment original input
-_say( join q{}, map {"\n % $_"} ( $paramline, @input ) );
+_say( join q{}, map {"\n % $_"} ( @input ) );
+
+my $paramline = shift @input;
 
 # create rows/column array[array_ref], remove leading and trailing spaces
 @input = map {
@@ -46,8 +41,8 @@ _say( join q{}, map {"\n % $_"} ( $paramline, @input ) );
 my %params = map { _parse_param($_) } split m{ ; }xms, $paramline;
 
 my $table = LaTeX::Table->new(
-    {   header => [ $input[0] ],
-        data   => [ @input[ 1 .. $#input ] ],
+    {   header => [ shift @input ],
+        data   => \@input,
         %params,
     }
 );
