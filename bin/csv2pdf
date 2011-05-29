@@ -19,7 +19,7 @@ use LaTeX::Table;
 use LaTeX::Encode;
 use LaTeX::Driver;
 
-use version; our $VERSION = qv('1.0.6');
+our $VERSION = '1.1';
 
 my ( $infile, $outfile, $outfiletex, $help, $man, $version );
 
