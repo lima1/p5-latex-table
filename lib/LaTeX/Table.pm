@@ -7,7 +7,7 @@ use Moose;
 use Moose::Util::TypeConstraints;
 use MooseX::FollowPBP;
 
-use version; our $VERSION = qv('1.0.6');
+our $VERSION = '1.1';
 
 use LaTeX::Table::Types::Std;
 use LaTeX::Table::Types::Xtab;
@@ -656,7 +656,7 @@ LaTeX::Table - Perl extension for the automatic generation of LaTeX tables.
 
 =head1 VERSION
 
-This document describes LaTeX::Table version 1.0.6
+This document describes LaTeX::Table version 1.1
 
 =head1 SYNOPSIS
 
@@ -1443,7 +1443,7 @@ Packages and Methods>.
 
 =head1 LICENSE AND COPYRIGHT
 
-Copyright (c) 2006-2010 C<< <limaone@cpan.org> >> 
+Copyright (c) 2006-2011 C<< <limaone@cpan.org> >> 
 
 This module is free software; you can redistribute it and/or
 modify it under the same terms as Perl itself. See L<perlartistic>.

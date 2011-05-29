@@ -22,7 +22,6 @@ WriteMakefile(
         'Module::Pluggable'    => 0,
         'Carp'           => 0,
         'Scalar::Util'   => 0,
-        'version'        => 0,
         'Template'       => 0,
         'Text::CSV'      => 0,
         'Cwd'            => 0,

@@ -16,10 +16,10 @@ my $builder = Module::Build->new(
         'Module::Pluggable'    => 0,
         'Scalar::Util'   => 0,
         'Carp'           => 0,
-        'version'        => 0,
         'Template'       => 0,
         'Cwd'            => 0,
     },
+    configure_requires => { 'Module::Build' => 0 },
     build_requires => {
         'Test::More'       => 0,
         'Test::NoWarnings' => 0,

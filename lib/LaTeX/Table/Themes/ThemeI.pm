@@ -5,7 +5,7 @@ use warnings;
 
 use Moose::Role;
 
-use version; our $VERSION = qv('1.0.6');
+our $VERSION = '1.1';
 
 requires '_definition';
 

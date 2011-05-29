@@ -1,5 +1,8 @@
 Revision history for LaTeX-Table
 
+1.1    Mon  Oct 25 2011
+        - Removed version dependency
+        
 1.0.6  Mon  Oct 25 2010
         - eor option (thanks Jens)
         - POD: Ascii tables of classic themes.
