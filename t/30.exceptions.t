@@ -1,4 +1,4 @@
-use Test::More tests => 35;
+use Test::More tests => 33;
 use Test::NoWarnings;
 
 use LaTeX::Table;
@@ -110,10 +110,6 @@ like(
     'header[0] is not an array reference'
 ) || diag $EVAL_ERROR;
 
-eval { $table->set_header( [ [ 'A', ['B'] ] ] ); };
-like( $EVAL_ERROR, qr{Attribute \(header\)}, 'header[0][1] is not a scalar' )
-    || diag $EVAL_ERROR;
-
 # data tests
 eval {
     $table = LaTeX::Table->new(
@@ -131,10 +127,6 @@ like(
     qr{Attribute \(data\)},
     'data[1] is not an array reference'
 ) || diag $EVAL_ERROR;
-
-eval { $table->set_data( [ [ 'A', 'B' ], [ 'A', undef ] ] ); };
-like( $EVAL_ERROR, qr{Attribute \(data\)}, 'undef value' )
-    || diag $EVAL_ERROR;
 
 $table->set_data($data);
 eval { $table->set_coldef_strategy(1); };

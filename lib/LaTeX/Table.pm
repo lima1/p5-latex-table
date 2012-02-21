@@ -88,9 +88,9 @@ has 'callback'            => ( is => 'rw', isa => 'CodeRef' );
 has 'resizebox'           => ( is => 'rw', isa => 'ArrayRef[Str]' );
 has 'columns_like_header' => ( is => 'rw', isa => 'ArrayRef[Int]' );
 has 'header' =>
-    ( is => 'rw', isa => 'ArrayRef[ArrayRef[Value]]', default => sub { [] } );
+    ( is => 'rw', isa => 'ArrayRef[ArrayRef]', default => sub { [] } );
 has 'data' =>
-    ( is => 'rw', isa => 'ArrayRef[ArrayRef[Value]]', default => sub { [] } );
+    ( is => 'rw', isa => 'ArrayRef[ArrayRef]', default => sub { [] } );
 has 'predef_themes' =>
     ( is => 'rw', isa => 'HashRef[HashRef]', default => sub { {} } );
 has 'custom_themes' =>
@@ -249,7 +249,7 @@ ROW:
         my $i = 0;
     COL:
         for my $col ( @{$row} ) {
-            next COL if $col =~ $strategy->{MISSING_VALUE};
+            next COL if !defined $col || $col =~ $strategy->{MISSING_VALUE};
 
             for my $coltype (@coltypes) {
                 if ( $col =~ $strategy->{$coltype} ) {
@@ -535,6 +535,7 @@ sub _get_mc_value {
 
 sub _get_mc_def {
     my ( $self, $value ) = @_;
+    return { value => undef } if (!defined $value);
     return $value =~ m{ \A (.*)\:(\d+)([clr]) \s* \z }xms
         ? {
         value => $1,
